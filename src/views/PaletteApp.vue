@@ -1,8 +1,13 @@
 <template>
   <h1>Vue パレット</h1>
   <div class="app">
-    <div class="palette" style="background-color: rgba(0, 0, 200, 0.5)"></div>
-    <p>rgba( {{ 0 }}, {{ 0 }}, 200, 0.5 )</p>
+    <p>rgba( {{ red }}, {{ green }}, 200, 0.5 )</p>
+    <div
+      class="palette"
+      v-on:mousemove="changeColor"
+      v-on:click="pickColor"
+      v-bind:style="{ backgroundColor: `rgba(${red}, ${green}, 200, 0.5)` }"
+    ></div>
     <div class="colors-container">
       <div class="mini-palette"></div>
     </div>
